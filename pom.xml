@@ -9,6 +9,12 @@
 
 	<name>webapp Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	<properties>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.plugin.version>3.3</maven.compiler.plugin.version>
+	    <maven.resources.plugin.version>2.6</maven.resources.plugin.version>	
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -42,6 +48,19 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<maxmem>256M</maxmem>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
