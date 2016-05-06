@@ -5,7 +5,7 @@
 	<artifactId>webapp</artifactId>
 	<packaging>war</packaging>
 
-	<version>1.0.0-RC0-SNAPSHOT</version>
+	<version>1.0.0-RC0</version>
 
 	<name>webapp Maven Webapp</name>
 	<url>http://maven.apache.org</url>
@@ -13,7 +13,7 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.plugin.version>3.3</maven.compiler.plugin.version>
-	    <maven.resources.plugin.version>2.6</maven.resources.plugin.version>	
+		<maven.resources.plugin.version>2.6</maven.resources.plugin.version>
 	</properties>
 
 	<dependencies>
@@ -38,7 +38,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>keyweb</finalName>
+		<finalName>keyweb-${version}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -58,6 +58,16 @@
 					<target>${maven.compiler.target}</target>
 					<maxmem>256M</maxmem>
 					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<!-- During release:perform, enable the "release" profile -->
+					<releaseProfiles>release</releaseProfiles>
 				</configuration>
 			</plugin>
 
