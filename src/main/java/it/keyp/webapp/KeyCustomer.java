@@ -36,10 +36,10 @@ public class KeyCustomer implements Serializable {
 
 	private String job;
 
-	private String citta;
+	private String city;
 
 	@Temporal(TemporalType.DATE)
-	private Date datainserimento;
+	private Date insertionDate;
 
 	public int getId() {
 		return id;
@@ -58,24 +58,24 @@ public class KeyCustomer implements Serializable {
 	}
 
 	public String getCitta() {
-		return citta;
+		return city;
 	}
 
 	public void setCitta(String citta) {
-		this.citta = citta;
+		this.city = citta;
 	}
 
 	public Date getDatainserimento() {
-		return datainserimento;
+		return insertionDate;
 	}
 
 	public void setDatainserimento(Date datainserimento) {
-		this.datainserimento = datainserimento;
+		this.insertionDate = datainserimento;
 	}
 
 	@Override
 	public String toString() {
-		return "KeyCustomer [job=" + job + ", citta=" + citta + "]";
+		return "KeyCustomer [job=" + job + ", citta=" + city + "]";
 	}
 
 

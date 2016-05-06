@@ -11,7 +11,7 @@ runTwitter.sh
 target/
 
 *.class
-
+.tern-project
 # Package Files #
 *.jar
 *.war

@@ -36,7 +36,7 @@ public class ControllerRs {
 	}
 
 	@GET
-	@Path("aggiungi/{job}/{citta}")
+	@Path("add/{job}/{citta}")
 	@Produces("application/json")
 	public KeyCustomer insert(@PathParam("job") String job,
 			@PathParam("citta") String citta){
