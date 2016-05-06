@@ -17,7 +17,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "HELLOKYEPARTNER")
+@Table(name = "CUSTOMERS")
 @NamedQueries({ @NamedQuery(name = "KeyCustomer.findAll", query = "SELECT e FROM KeyCustomer e"), })
 public class KeyCustomer implements Serializable {
 
