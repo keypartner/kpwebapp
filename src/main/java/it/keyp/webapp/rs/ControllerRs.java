@@ -13,25 +13,28 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import org.apache.log4j.Logger;
 
 import it.keyp.webapp.domain.KeyCustomer;
+import it.keyp.webapp.domain.KeyEmployee;
 import it.keyp.webapp.ejb.KeyCustomerDAOLocal;
+import it.keyp.webapp.ejb.KeyEmployeeDAOLocal;
+import it.keyp.webapp.interceptors.Logging;
 
 @Path("customers")
 @ApplicationScoped
+@Logging
 public class ControllerRs {
 
-	Logger log = Logger.getLogger(ControllerRs.class);
 
 	@EJB
 	KeyCustomerDAOLocal keyCustomerDAO;
+	@EJB
+	KeyEmployeeDAOLocal keyEmployeeDAO;
 
 	@GET
 	@Produces("application/json")
-	public KeyCustomer[] get() {
- 		List<KeyCustomer> listKeyCust = keyCustomerDAO.getAllCustomers();
-		log.info("Trovati N. ["+listKeyCust.size()+"] Clienti Keypartner...");
+	public KeyCustomer[] getCustomers() {
+		List<KeyCustomer> listKeyCust = keyCustomerDAO.getAllCustomers();
 		return listKeyCust.toArray(new KeyCustomer[0]);
 	}
 
@@ -46,6 +49,12 @@ public class ControllerRs {
 		keyCustomer.setInsertionDate(new Date());
 		return keyCustomerDAO.addCustomers(keyCustomer);
 	}
-
+	
+	@GET
+	@Produces("application/json")
+	public KeyEmployee[] getEmployees() {
+		List<KeyEmployee> listKeyEmp = keyEmployeeDAO.getAllEmpoyees();
+		return listKeyEmp.toArray(new KeyEmployee[0]);
+	}
 
 }

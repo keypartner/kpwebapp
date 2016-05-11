@@ -6,18 +6,15 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.apache.log4j.Logger;
-
 import it.keyp.webapp.domain.KeyCustomer;
-import it.keyp.webapp.rs.ControllerRs;
+import it.keyp.webapp.interceptors.Logging;
 
 @Stateless
+@Logging
 public class KeyCustomerDAO implements KeyCustomerDAOLocal{
-	
+
 	@PersistenceContext(unitName="MyPU")
 	EntityManager em;
-	
-	Logger log = Logger.getLogger(ControllerRs.class);
 
 
 	/*
@@ -34,10 +31,9 @@ public class KeyCustomerDAO implements KeyCustomerDAOLocal{
 	 */
 	public KeyCustomer addCustomers(KeyCustomer keyCustomer) {
 		em.persist(keyCustomer);
-		log.info("Aggiunto nuovo cliente ==> "+keyCustomer);
 		return keyCustomer;
 	}
-	
-	
+
+
 
 }
