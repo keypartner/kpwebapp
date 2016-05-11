@@ -20,7 +20,7 @@ import it.keyp.webapp.ejb.KeyCustomerDAOLocal;
 import it.keyp.webapp.ejb.KeyEmployeeDAOLocal;
 import it.keyp.webapp.interceptors.Logging;
 
-//@Path("customers")
+@Path("/")
 @ApplicationScoped
 @Logging
 public class ControllerRs {
