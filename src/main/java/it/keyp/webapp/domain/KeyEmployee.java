@@ -22,7 +22,7 @@ public class KeyEmployee implements Serializable {
 	private Long id;
 	private String name;
 	private String surname;
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date birthdate;
 	private static final long serialVersionUID = 1L;
 
