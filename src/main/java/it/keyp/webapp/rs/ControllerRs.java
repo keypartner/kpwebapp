@@ -20,7 +20,7 @@ import it.keyp.webapp.ejb.KeyCustomerDAOLocal;
 import it.keyp.webapp.ejb.KeyEmployeeDAOLocal;
 import it.keyp.webapp.interceptors.Logging;
 
-@Path("customers")
+//@Path("customers")
 @ApplicationScoped
 @Logging
 public class ControllerRs {
@@ -32,6 +32,7 @@ public class ControllerRs {
 	KeyEmployeeDAOLocal keyEmployeeDAO;
 
 	@GET
+        @Path("customers")
 	@Produces("application/json")
 	public KeyCustomer[] getCustomers() {
 		List<KeyCustomer> listKeyCust = keyCustomerDAO.getAllCustomers();
@@ -51,6 +52,7 @@ public class ControllerRs {
 	}
 	
 	@GET
+        @Path("employees")
 	@Produces("application/json")
 	public KeyEmployee[] getEmployees() {
 		List<KeyEmployee> listKeyEmp = keyEmployeeDAO.getAllEmpoyees();
